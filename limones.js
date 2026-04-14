@@ -115,3 +115,13 @@ function reiniciarIntervalo(){
     clearInterval(intervalo);
     intervalo = setInterval(bajarLimon, velocidadCaida);
 }
+
+function reiniciar(){
+    vidas=3;
+    puntaje=0;
+    velocidadCaida=200;
+    clearInterval(intervalo);
+    mostrarEnSpan("txtVidas",vidas);
+    mostrarEnSpan("txtPuntaje",puntaje);
+    iniciar();
+}
