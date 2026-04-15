@@ -83,7 +83,12 @@ function detectarAtrapado(){
             reiniciarIntervalo();
         }if(puntaje==10){
             alert("TIENES LOS LIMONES, AHORA TE FALTA SAL Y TEQUILA");
-            clearInterval(intervalo);
+            vidas=3;
+            puntaje=0;
+            velocidadCaida=200;
+            mostrarEnSpan("txtVidas",vidas);
+            mostrarEnSpan("txtPuntaje",puntaje);
+            reiniciarIntervalo();
         }
     }
 }
