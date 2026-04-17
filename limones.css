@@ -1,31 +1,157 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* FONDO DINÁMICO */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #0f172a;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at top, #1e293b, #020617);
   color: white;
   text-align: center;
-  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* CONTENEDOR */
+.contenedor {
+  max-width: 900px;
+  margin: auto;
   padding: 20px;
 }
 
-.contenedor {
-  max-width: 800px;
-  margin: 0 auto;
+/* HEADER */
+.header h1 {
+  font-size: 2.8rem;
+  background: linear-gradient(90deg, #facc15, #f59e0b);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 15px rgba(250, 204, 21, 0.5);
 }
 
+.subtitulo {
+  color: #cbd5f5;
+  margin: 10px 0;
+}
+
+.autor {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+/* CARD */
+.juego-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 25px;
+  margin-top: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+  overflow: hidden;
+}
+
+/* EFECTO DECORATIVO */
+.decoracion {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, #facc15, transparent);
+  top: -50px;
+  right: -50px;
+  opacity: 0.2;
+  animation: flotar 6s infinite alternate ease-in-out;
+}
+
+@keyframes flotar {
+  from { transform: translateY(0px); }
+  to { transform: translateY(20px); }
+}
+
+/* CANVAS */
 canvas {
-  background-color: #111827;
-  border: 3px solid #38bdf8;
+  background: radial-gradient(circle, #111827, #020617);
+  border: 2px solid #facc15;
+  border-radius: 15px;
   display: block;
   margin: 20px auto;
+  box-shadow:
+    0 0 15px rgba(250, 204, 21, 0.5),
+    inset 0 0 10px rgba(0,0,0,0.8);
+  transition: transform 0.2s;
 }
 
+canvas:hover {
+  transform: scale(1.01);
+}
+
+/* PANEL */
 .panel {
+  display: flex;
+  justify-content: space-around;
   margin: 20px 0;
 }
 
+/* TARJETAS DE STATS */
+.stat {
+  background: rgba(255,255,255,0.05);
+  padding: 12px 25px;
+  border-radius: 12px;
+  box-shadow: inset 0 0 10px rgba(255,255,255,0.05);
+}
+
+.label {
+  display: block;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+/* NÚMEROS CON EFECTO */
+#txtPuntaje,
+#txtVidas {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #facc15;
+  text-shadow: 0 0 10px rgba(250, 204, 21, 0.7);
+}
+
+/* BOTONES */
+.botones {
+  margin-top: 10px;
+}
+
 .botones button {
-  margin: 5px;
-  padding: 10px 16px;
-  font-size: 16px;
+  margin: 10px;
+  padding: 12px 20px;
+  font-size: 15px;
+  border: none;
+  border-radius: 12px;
   cursor: pointer;
+  background: linear-gradient(135deg, #facc15, #f59e0b);
+  color: #1e293b;
+  font-weight: bold;
+  transition: all 0.25s ease;
+}
+
+/* HOVER BOTONES */
+.botones button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(250, 204, 21, 0.4);
+}
+
+/* CLICK */
+.botones button:active {
+  transform: scale(0.95);
+}
+
+/* BOTÓN REINICIAR */
+.btn-reiniciar {
+  background: linear-gradient(135deg, #f43f5e, #e11d48);
+  color: white;
+}
+
+.btn-reiniciar:hover {
+  box-shadow: 0 10px 20px rgba(244, 63, 94, 0.5);
 }
